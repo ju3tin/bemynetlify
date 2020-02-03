@@ -1,17 +1,17 @@
 const initialState = {
-    isLoading: false,
-    registration: {
-        "username": "",
-        "email": "",
-        "password": "",
-        "role": ""
-    },
-    error: false
+  user: {
+    username: "",
+    email: "",
+    password: "",
+    role: ""
+  },
+  isLoading: false,
+  error: false
 }
 
 export const reducer = (state = initialState, action) => {
-    switch(action.type) {
-        default:
-            return state;
-    }
+  switch (action.type) {
+    default:
+      return state
+  }
 }
