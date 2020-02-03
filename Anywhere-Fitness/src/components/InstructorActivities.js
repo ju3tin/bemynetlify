@@ -1,6 +1,10 @@
 import React from "react"
 
 const InstructorActivities = () => {
-  return <div>Instructor Activities</div>
+  return (
+    <div>
+      <p>Instructor Activities</p>
+    </div>
+  )
 }
 export default InstructorActivities
