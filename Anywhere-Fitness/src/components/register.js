@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-const LoginPage = (props) => {
+const RegisterPage = (props) => {
 
-    const [login, setLogin] = useState({username:"", password:""})
+    const [signup, setSignup] = useState({username:"", email:"", password:""})
 
-    const { register, handleSubmit, errors, reset } = useForm();
-
+    const { register, handleSubmit, errors } = useForm();
+    
     const onSubmit= (data, e) => {
         console.log(data)
         e.preventDefault();
@@ -14,21 +14,21 @@ const LoginPage = (props) => {
     };
 
     const changeHandler = elem => {
-        setLogin({ ...login, [elem.target.name]: elem.target.value});
-        console.log("login", login);
+        setSignup({ ...signup, [elem.target.name]: elem.target.value});
+        console.log("login", signup);
     }
 
     return (
         <form className="App" onSubmit={handleSubmit(onSubmit)}>
             
-            <h1>Log In</h1>
+            <h1>Register</h1>
             <hr></hr>
 
             <label htmlFor="username">Username:</label>
                 <input 
                 onChange={changeHandler}
-                type="text"
                 name="username" 
+                type="text" 
                 ref={register({required: true, minLength: 3})}
                 />
                 {errors.username && errors.username.type === "required" && (
@@ -37,11 +37,25 @@ const LoginPage = (props) => {
                 {errors.username && errors.username.type === "minLength" && (
                     <p className="starterPs">this field requires a minimum length of 2 characters.</p>
                 )}
+
+            <label htmlFor="email">Email:</label>
+                <input 
+                onChange={changeHandler}
+                type="email"
+                name="email" 
+                ref={register({required: true, minLength: 5})}
+                />
+                {errors.email && errors.email.type === "required" && (
+                    <p className="starterPs">this field is required.</p>
+                )}
+                {errors.email && errors.email.type === "minLength" && (
+                    <p className="starterPs">this field requires a minimum length of 2 characters.</p>
+                )}
             
             <label htmlFor="password">Password:</label>
                 <input 
                 onChange={changeHandler}
-                name="password"
+                name="password" 
                 type="password"
                 ref={register({required: true, minLength: 5})} 
                 />
@@ -57,4 +71,4 @@ const LoginPage = (props) => {
     )
 }
 
-export default LoginPage;
+export default RegisterPage;
