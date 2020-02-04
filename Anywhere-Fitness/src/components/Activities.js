@@ -1,19 +1,25 @@
-import React from "react"
-import { Route, BrowserRouter as Router } from "react-router-dom"
+// import React from "react"
+// import { Route, BrowserRouter as Router } from "react-router-dom"
 
-// components
-import InstructorRoute from "./InstructorRoute"
-import InstructorActivities from "./InstructorActivities"
-import AttendeeRoute from "./AttendeeRoute"
-import AttendeeActivities from "./AttendeeActivities"
+// // components
+// import InstructorRoute from "./InstructorRoute"
+// import InstructorActivities from "./InstructorActivities"
+// import AttendeeRoute from "./AttendeeRoute"
+// import AttendeeActivities from "./AttendeeActivities"
 
-export const Activities = () => {
-  return (
-    <div>
-      <Router>
-        <InstructorRoute path="/instructors" component={InstructorActivities} />
-        <AttendeeRoute path="/attendees" component={AttendeeActivities} />
-      </Router>
-    </div>
-  )
-}
+// export const Activities = () => {
+//   return (
+//     <div>
+//       <Router>
+//         <InstructorRoute
+//           path="/activities/instructors"
+//           component={InstructorActivities}
+//         />
+//         <AttendeeRoute
+//           path="/activities/attendees"
+//           component={AttendeeActivities}
+//         />
+//       </Router>
+//     </div>
+//   )
+// }

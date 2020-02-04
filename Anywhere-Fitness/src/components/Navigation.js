@@ -15,22 +15,18 @@ const Navigation = () => {
       <div>
         <nav className="flexThis">
           <Link to={"/Dashboard"}> Home </Link>
-          <Link to={"/Attendees"}> Attendees </Link>
-          <Link to={"/Instructors"}> Instructors </Link>
+          <Link to="/attendees"> Attendees </Link>
+          <Link to="/instructors"> Instructors </Link>
           {/* <Link to={"/Logout"}> Logout </Link> */}
         </nav>
+        <Switch>
+          <Route exact path="/" component={Dashboard} />
+          <Route path="/attendees" component={AttendeeActivities} />
+          <Route path="/instructors" component={InstructorActivities} />
+        </Switch>
+        <StyledHr />
       </div>
-      <Switch>
-        <Route exact path="/">
-          <Dashboard />
-        </Route>
-        <Route path="/attendees">
-          <AttendeeActivities />
-        </Route>
-        <Route path="/instructors">
-          <InstructorActivities />
-        </Route>
-      </Switch>
+
       {/* <StyledHr /> */}
     </Router>
   )

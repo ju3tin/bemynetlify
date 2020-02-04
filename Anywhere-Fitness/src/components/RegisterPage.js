@@ -35,6 +35,7 @@ const RegisterPage = props => {
 
   return (
     <form className="App" onSubmit={handleSubmit(onSubmit)}>
+
       <h1>Register</h1>
       <hr></hr>
 
@@ -85,12 +86,16 @@ const RegisterPage = props => {
           this field requires a minimum length of 2 characters.
         </p>
       )}
-      <select name="role" ref={register({ required: true })}>
-        <option value="instructor">Instructor</option>
-        <option value="attendee">Attendee</option>
+
+      <div className="roleSelector">Select Your Role:</div>
+      <select className="dropDownTitle" name="role" ref={register({ required: true })}>
+        
+        <option className="selector" value="attendee">I'm an Attendee</option>
+        <option className="selector" value="instructor">I'm an Instructor</option>
       </select>
 
       <input type="submit" className="submitButton" />
+      
     </form>
   )
 }
