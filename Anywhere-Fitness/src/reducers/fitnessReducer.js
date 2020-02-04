@@ -5,6 +5,7 @@ const initialState = {
         password: "",
         role: ""
     }
+  }
 //   isLoading: false,
 //   users: [],
 //   error: false
