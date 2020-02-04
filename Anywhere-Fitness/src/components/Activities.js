@@ -4,14 +4,5 @@ import InstructorRoute from "./InstructorRoute"
 import InstructorActivities from "./InstructorActivities"
 
 export const Activities = () => {
-  return (
-    <div>
-      <Router>
-        <InstructorRoute
-          path="/Activities/Instructors"
-          component={InstructorActivities}
-        />
-      </Router>
-    </div>
-  )
+  return <div></div>
 }
