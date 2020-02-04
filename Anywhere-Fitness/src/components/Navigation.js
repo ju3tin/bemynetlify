@@ -26,6 +26,8 @@ const Navigation = () => {
         </Switch>
         <StyledHr />
       </div>
+
+      {/* <StyledHr /> */}
     </Router>
   )
 }

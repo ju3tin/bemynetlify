@@ -45,9 +45,9 @@
   padding: 5% 0 5% 0;
   margin: 1% 5% 0 5%;
 }
-@media (max-width: 500px){
+@media (max-width: 500px) {
   .flexHeader {
-  flex-direction: column;
+    flex-direction: column;
   }
 }
 hr {
@@ -57,7 +57,7 @@ hr {
 button {
   margin: 5% 0 0 0;
   width: 80%;
-  opacity: .75;
+  opacity: 0.75;
   height: 2rem;
   font-weight: bold;
 }
@@ -73,7 +73,7 @@ form {
 }
 .sectionBorder {
   border: 1px solid black;
-  padding: 2% 5% 5% 5%; 
+  padding: 2% 5% 5% 5%;
   border-radius: 1rem;
   background-color: lightgray;
 }
@@ -114,10 +114,11 @@ a {
   color: black;
   font-weight: bold;
 }
-a:hover{
+a:hover {
   text-decoration: underline;
   font-weight: bold;
 }
+
 .selector {
   margin: 5% 0 0 0;
   width: 100%;
