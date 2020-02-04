@@ -3,12 +3,12 @@ const initialState = {
     username: "",
     email: "",
     password: "",
-    role: ""
+    role: "",
+    id: ""
   },
   isLoading: false,
-  error: {},
   users: [],
-  editing: false
+  error: false
 }
 
 export const fitnessReducer = (state = initialState, action) => {

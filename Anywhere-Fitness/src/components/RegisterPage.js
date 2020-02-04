@@ -7,7 +7,8 @@ const RegisterPage = props => {
   const [signup, setSignup] = useState({
     username: "",
     email: "",
-    password: ""
+    password: "",
+    role: ""
   })
 
   const { register, handleSubmit, errors } = useForm()
@@ -18,15 +19,18 @@ const RegisterPage = props => {
 
     axiosWithAuth()
       .post("/auth/register", data)
-      .then(res => console.log(res))
+      .then(res => {
+        console.log(res)
+        localStorage.setItem("token", res.data.payload)
+        props.history.push("/DashBoard")
+      })
       .catch(err => console.log(err))
-    props.history.push("/DashBoard")
     e.target.reset()
   }
 
   const changeHandler = elem => {
     setSignup({ ...signup, [elem.target.name]: elem.target.value })
-    console.log("login", signup)
+    // console.log("login", signup)
   }
 
   return (
@@ -81,6 +85,10 @@ const RegisterPage = props => {
           this field requires a minimum length of 2 characters.
         </p>
       )}
+      <select name="role" ref={register({ required: true })}>
+        <option value="instructor">Instructor</option>
+        <option value="attendee">Attendee</option>
+      </select>
 
       <input type="submit" className="submitButton" />
     </form>
