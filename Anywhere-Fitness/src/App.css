@@ -43,7 +43,12 @@
   border: 3px solid gray;
   background-color: blue;
   padding: 5% 0 5% 0;
-  margin: 1% 15% 0 15%;
+  margin: 1% 5% 0 5%;
+}
+@media (max-width: 500px){
+  .flexHeader {
+  flex-direction: column;
+  }
 }
 hr {
   width: 100%;
@@ -76,12 +81,24 @@ form {
   margin: 5% 0% 0 0;
 }
 .submitButton {
-  margin-top: 10%;
+  margin: 20% 0 0 0;
   padding: 2% 1% 2% 1%;
   width: 100%;
   background-color: blue;
   color: white;
   border-radius: 1rem;
+}
+.submitButton2 {
+  margin: 10rem 0 0 0;
+  padding: 2% 1% 2% 1%;
+  width: 100%;
+  background-color: blue;
+  color: white;
+  border-radius: 1rem;
+}
+.submitButton2:hover {
+  font-weight: bold;
+  cursor: pointer;
 }
 .submitButton:hover {
   font-weight: bold;
@@ -99,5 +116,13 @@ a {
 }
 a:hover{
   text-decoration: underline;
+  font-weight: bold;
+}
+.selector {
+  margin: 5% 0 0 0;
+  width: 100%;
+}
+.dropDownTitle {
+  margin: 25% 0 0% 0;
   font-weight: bold;
 }

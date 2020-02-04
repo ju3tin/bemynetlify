@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import styled from 'styled-components';
+
+const StyledButton = styled.button`
+
+`
 
 const LoginPage = (props) => {
 
@@ -52,7 +57,7 @@ const LoginPage = (props) => {
                     <p className="starterPs">this field requires a minimum length of 2 characters.</p>
                 )}
 
-                <input type='submit' className="submitButton"/>
+                <input type='submit' className="submitButton2"/>
         </form>
     )
 }

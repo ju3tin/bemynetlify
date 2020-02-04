@@ -35,7 +35,7 @@ const RegisterPage = (props) => {
                     <p className="starterPs">this field is required.</p>
                 )}
                 {errors.username && errors.username.type === "minLength" && (
-                    <p className="starterPs">this field requires a minimum length of 2 characters.</p>
+                    <p className="starterPs">this field requires a minimum length of 3 characters.</p>
                 )}
 
             <label htmlFor="email">Email:</label>
@@ -49,7 +49,7 @@ const RegisterPage = (props) => {
                     <p className="starterPs">this field is required.</p>
                 )}
                 {errors.email && errors.email.type === "minLength" && (
-                    <p className="starterPs">this field requires a minimum length of 2 characters.</p>
+                    <p className="starterPs">this field requires a minimum length of 5 characters.</p>
                 )}
             
             <label htmlFor="password">Password:</label>
@@ -63,8 +63,17 @@ const RegisterPage = (props) => {
                     <p className="starterPs">this field is required.</p>
                 )}
                 {errors.password && errors.password.type === "minLength" && (
-                    <p className="starterPs">this field requires a minimum length of 2 characters.</p>
+                    <p className="starterPs">this field requires a minimum length of 5 characters.</p>
                 )}
+                <div>
+
+                <div className="dropDownTitle">Are you an Instructor?</div>
+                <select className="selector" name="gender" ref={register}>
+                
+                    <option className="selector" value="Attendee">No, I'm an Attendee</option>
+                    <option value="Instructor">Yes, I'm an Instructor</option>
+                </select>
+                </div>
 
                 <input type='submit' className="submitButton"/>
         </form>

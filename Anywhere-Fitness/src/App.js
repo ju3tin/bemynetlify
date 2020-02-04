@@ -3,6 +3,7 @@ import './App.css';
 import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import Dashboard from './components/Dashboard';
+import styled from 'styled-components';
 
 
 function App() {
