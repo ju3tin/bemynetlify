@@ -7,7 +7,7 @@ import logger from "redux-logger"
 import App from "./App"
 import * as serviceWorker from "./serviceWorker"
 
-import { reducer, fitnessReducer } from "./reducers/fitnessReducer"
+import { fitnessReducer } from "./reducers/fitnessReducer"
 
 const store = createStore(fitnessReducer, applyMiddleware(thunk, logger))
 
