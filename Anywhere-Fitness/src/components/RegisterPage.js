@@ -1,6 +1,5 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useForm } from "react-hook-form"
-import axios from "axios"
 import { axiosWithAuth } from "../utils/axiosWithAuth"
 
 const RegisterPage = props => {
@@ -33,7 +32,9 @@ const RegisterPage = props => {
     // console.log("login", signup)
   }
 
-  return (
+
+
+return (
     <form className="App" onSubmit={handleSubmit(onSubmit)}>
 
       <h1>Register</h1>

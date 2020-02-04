@@ -14,9 +14,9 @@ const Navigation = () => {
     <Router>
       <div>
         <nav className="flexThis">
-          <Link to={"/Dashboard"}> Home </Link>
-          <Link to="/attendees"> Attendees </Link>
-          <Link to="/instructors"> Instructors </Link>
+          <Link className="links" to={"/Dashboard"}> Home </Link>
+          <Link className="links" to="/attendees"> Attendees </Link>
+          <Link className="links" to="/instructors"> Instructors </Link>
           {/* <Link to={"/Logout"}> Logout </Link> */}
         </nav>
         <Switch>

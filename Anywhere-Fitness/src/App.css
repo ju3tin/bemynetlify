@@ -42,8 +42,8 @@
   justify-content: space-evenly;
   border: 3px solid gray;
   background-color: blue;
-  padding: 5% 0 5% 0;
-  margin: 1% 5% 0 5%;
+  padding: 2% 0 2% 0;
+  margin: 0% 5% 0 5%;
 }
 @media (max-width: 500px) {
   .flexHeader {
@@ -107,12 +107,13 @@ form {
 .flexThis {
   display: flex;
   justify-content: space-between;
-  margin: 2% 40% 0 2%;
+  margin: 0% 40% 2% 5%;
 }
 a {
   text-decoration: none;
-  color: black;
+  color: white;
   font-weight: bold;
+  font-size: 1.5rem;
 }
 a:hover {
   text-decoration: underline;
@@ -130,4 +131,26 @@ a:hover {
 .roleSelector {
   margin: 20% 0 0 0;
   display: flex;
+}
+.paraClass {
+  color: white;
+  margin: 3% 0 3% 0;
+}
+.unflexThis {
+  margin: 0% 0 0% 20%;
+  border: 3px solid gray;
+  border-radius: 5px;
+}
+@media (max-width: 600px){
+  .unflexThis{
+    margin: 0;
+  }
+  .flexThis{
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+  }
+  .links:hover{
+    background-color: orange;
+  }
 }
