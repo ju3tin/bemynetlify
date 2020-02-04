@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useForm } from "react-hook-form"
+import axios from "axios"
 import { axiosWithAuth } from "../utils/axiosWithAuth"
-import { useHistory } from "react-router-dom"
 
 const RegisterPage = props => {
   const [signup, setSignup] = useState({
@@ -10,22 +10,17 @@ const RegisterPage = props => {
     password: ""
   })
 
-  const { push } = useHistory()
-
   const { register, handleSubmit, errors } = useForm()
 
   const onSubmit = (data, e) => {
     console.log(data)
     // e.preventDefault()
-    const onSubmit = data => {
-      console.log(data)
 
-      axiosWithAuth()
-        .post("/auth/register/", data)
-        .then(res => console.log(`NEW USER POST RESPONSE ${res}`))
-        .catch(err => console.log(err))
-      props.history.push("")
-    }
+    axiosWithAuth()
+      .post("/auth/register", data)
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+    props.history.push("/DashBoard")
     e.target.reset()
   }
 
