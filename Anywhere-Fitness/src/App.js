@@ -12,13 +12,9 @@ function App() {
       <div className="App">
         <Switch>
           <div className="flexHeader">
-            <div className="sectionBorder">
-              <Route exact path="/" component={LoginPage} />
-            </div>
+            <Route exact path="/" component={LoginPage} />
 
-            <div className="sectionBorder">
-              <Route exact path="/" component={RegisterPage} />
-            </div>
+            <Route exact path="/" component={RegisterPage} />
 
             <PrivateRoute path="/Dashboard" component={Dashboard} />
           </div>
