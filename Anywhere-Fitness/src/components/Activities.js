@@ -12,7 +12,7 @@ export const Activities = () => {
     <div>
       <Router>
         <InstructorRoute
-          path="/Activities/Instructors"
+          path="/activities/instructors"
           component={InstructorActivities}
         />
         <AttendeeRoute
