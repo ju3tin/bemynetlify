@@ -81,7 +81,7 @@ form {
   margin: 5% 0% 0 0;
 }
 .submitButton {
-  margin: 20% 0 0 0;
+  margin: 2.6rem 0 0 0;
   padding: 2% 1% 2% 1%;
   width: 100%;
   background-color: blue;
@@ -123,6 +123,10 @@ a:hover{
   width: 100%;
 }
 .dropDownTitle {
-  margin: 25% 0 0% 0;
+  margin: 5% 0 0% 0;
   font-weight: bold;
+}
+.roleSelector {
+  margin: 20% 0 0 0;
+  display: flex;
 }
