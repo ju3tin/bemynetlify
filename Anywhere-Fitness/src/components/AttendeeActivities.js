@@ -5,7 +5,6 @@ import { getClasses } from "../actions";
 const AttendeeActivities = props => {
     useEffect(() => {
         props.getClasses();
-        console.log('this is from the useEffect')
     }, [])
 
     console.log(props.classes);
