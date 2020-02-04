@@ -1,12 +1,18 @@
 import React from 'react';
 import './App.css';
-import LoginPage from './components/login'
-import RegisterPage from './components/register'
+import LoginPage from './components/LoginPage';
+import RegisterPage from './components/RegisterPage';
+import Dashboard from './components/Dashboard';
+
 
 function App() {
+
+
+
   return (
 
-    <div className="App">
+  <div className="App">
+
       <div className="flexHeader">
 
       <div className="sectionBorder">
@@ -18,6 +24,7 @@ function App() {
       </div>
 
       </div>
+
   </div>
 
   );
