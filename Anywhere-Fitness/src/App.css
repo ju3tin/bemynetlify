@@ -131,3 +131,17 @@ a:hover {
   margin: 20% 0 0 0;
   display: flex;
 }
+.paraClass {
+  color: white;
+  margin: 3% 0 3% 0;
+}
+.unflexThis {
+  margin: 0% 0 0% 20%;
+  border: 3px solid gray;
+  border-radius: 5px;
+}
+@media (max-width: 600px){
+  .unflexThis{
+    margin: 0;
+  }
+}
