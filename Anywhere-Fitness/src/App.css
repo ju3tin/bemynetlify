@@ -52,7 +52,7 @@ hr {
 button {
   margin: 5% 0 0 0;
   width: 80%;
-  opacity: .75;
+  opacity: 0.75;
   height: 2rem;
   font-weight: bold;
 }
@@ -68,7 +68,7 @@ form {
 }
 .sectionBorder {
   border: 1px solid black;
-  padding: 2% 5% 5% 5%; 
+  padding: 2% 5% 5% 5%;
   border-radius: 1rem;
   background-color: lightgray;
 }
@@ -97,7 +97,7 @@ a {
   color: black;
   font-weight: bold;
 }
-a:hover{
+a:hover {
   text-decoration: underline;
   font-weight: bold;
 }

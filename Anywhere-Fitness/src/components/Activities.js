@@ -11,14 +11,8 @@ export const Activities = () => {
   return (
     <div>
       <Router>
-        <InstructorRoute
-          path="/activities/instructors"
-          component={InstructorActivities}
-        />
-        <AttendeeRoute
-          path="/activities/attendees"
-          component={AttendeeActivities}
-        />
+        <InstructorRoute path="/instructors" component={InstructorActivities} />
+        <AttendeeRoute path="/attendees" component={AttendeeActivities} />
       </Router>
     </div>
   )

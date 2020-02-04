@@ -19,19 +19,19 @@ const Navigation = () => {
           <Link to={"/Instructors"}> Instructors </Link>
           {/* <Link to={"/Logout"}> Logout </Link> */}
         </nav>
-        <Switch>
-          <Route exact path="/">
-            <Dashboard />
-          </Route>
-          <Route path="/attendees">
-            <AttendeeActivities />
-          </Route>
-          <Route path="/instructors">
-            <InstructorActivities />
-          </Route>
-        </Switch>
-        <StyledHr />
       </div>
+      <Switch>
+        <Route exact path="/">
+          <Dashboard />
+        </Route>
+        <Route path="/attendees">
+          <AttendeeActivities />
+        </Route>
+        <Route path="/instructors">
+          <InstructorActivities />
+        </Route>
+      </Switch>
+      {/* <StyledHr /> */}
     </Router>
   )
 }
