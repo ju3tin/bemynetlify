@@ -87,7 +87,7 @@ const LoginPage = (props) => {
                     <p className="starterPs">this field requires a minimum length of 2 characters.</p>
                 )}
 
-                <input type='submit' className="submitButton"/>
+                <input type='submit' className="submitButton2"/>
         </form>
     )
 }
