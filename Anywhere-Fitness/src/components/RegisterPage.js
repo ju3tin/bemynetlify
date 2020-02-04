@@ -20,8 +20,9 @@ const RegisterPage = props => {
       .post("/auth/register", data)
       .then(res => {
         console.log(res)
-        localStorage.setItem("token", res.data.payload)
-        props.history.push("/DashBoard")
+        localStorage.setItem("token", res.data.user.token)
+        localStorage.setItem("user", JSON.stringify(res.data.user))
+        props.history.push("/Dashboard")
       })
       .catch(err => console.log(err))
     e.target.reset()
@@ -32,11 +33,8 @@ const RegisterPage = props => {
     // console.log("login", signup)
   }
 
-
-
-return (
+  return (
     <form className="App" onSubmit={handleSubmit(onSubmit)}>
-
       <h1>Register</h1>
       <hr></hr>
 
@@ -89,14 +87,20 @@ return (
       )}
 
       <div className="roleSelector">Select Your Role:</div>
-      <select className="dropDownTitle" name="role" ref={register({ required: true })}>
-        
-        <option className="selector" value="attendee">I'm an Attendee</option>
-        <option className="selector" value="instructor">I'm an Instructor</option>
+      <select
+        className="dropDownTitle"
+        name="role"
+        ref={register({ required: true })}
+      >
+        <option className="selector" value="attendee">
+          I'm an Attendee
+        </option>
+        <option className="selector" value="instructor">
+          I'm an Instructor
+        </option>
       </select>
 
       <input type="submit" className="submitButton" />
-      
     </form>
   )
 }
