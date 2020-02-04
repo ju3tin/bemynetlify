@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import axios from "axios";
 
 const LoginPage = (props) => {
 
@@ -7,11 +8,34 @@ const LoginPage = (props) => {
 
     const { register, handleSubmit, errors, reset } = useForm();
 
-    const onSubmit= (data, e) => {
-        console.log(data)
+    // const onSubmit= (data, e) => {
+    //     console.log(data);
+    //     e.preventDefault();
+    //     e.target.reset();
+    // };
+
+    const onSubmit = e => {
         e.preventDefault();
-        e.target.reset();
-    };
+        axios
+            .post('https://anywhere-fitness-backend.herokuapp.com/api/auth/login', login)
+            .then (res => {
+                localStorage.setItem("token", res.data.payload);
+                props.history.push('/protected');
+            })
+            .catch(err => console.log(err));
+    }
+
+    // const submitLogin = e => {
+    //     e.preventDefault();
+    //     axios
+    //       .post("http://localhost:5000/api/login", credentials)
+    //       .then(res => {
+    //         // console.log(res);
+    //         localStorage.setItem("token", res.data.payload);
+    //         props.history.push('/protected');
+    //       })
+    //       .catch(err => console.log(err))
+    //   }
 
     const changeHandler = elem => {
         setLogin({ ...login, [elem.target.name]: elem.target.value});

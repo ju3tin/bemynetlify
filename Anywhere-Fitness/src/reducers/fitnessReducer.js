@@ -1,14 +1,15 @@
 const initialState = {
-    users: {
+    user: {
         username: "",
         email: "",
         password: "",
-        role: ""
-    }
-//   isLoading: false,
-//   users: [],
-//   error: false
-// }
+        role: "",
+        id: ""
+    },
+  isLoading: false,
+  users: [],
+  error: false
+}
 
 export const fitnessReducer = (state = initialState, action) => {
   switch (action.type) {

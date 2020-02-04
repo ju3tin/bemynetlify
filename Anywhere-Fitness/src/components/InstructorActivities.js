@@ -7,4 +7,4 @@ const InstructorActivities = () => {
     </div>
   )
 }
-export default InstructorActivities
+export default InstructorActivities;
