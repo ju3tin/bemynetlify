@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import axios from "axios";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const LoginPage = (props) => {
 
@@ -8,10 +10,43 @@ const LoginPage = (props) => {
     const { register, handleSubmit, errors, reset } = useForm();
 
     const onSubmit= (data, e) => {
-        console.log(data)
+        console.log(data);
         e.preventDefault();
+        axiosWithAuth()
+            .post('https://anywhere-fitness-backend.herokuapp.com/api/auth/login', data)
+            .then (res => {
+                console.log('hello from the then');
+                localStorage.setItem("token", res.data.payload);
+                props.history.push('/Dashboard');
+            })
+            .catch(err => console.log(err));
         e.target.reset();
     };
+
+    // const onSubmit = e => {
+    //     e.preventDefault();
+    //     console.log(login);
+    //     axiosWithAuth()
+    //         .post('https://anywhere-fitness-backend.herokuapp.com/api/auth/login', login)
+    //         .then (res => {
+    //             console.log('hello from the then');
+    //             localStorage.setItem("token", res.data.payload);
+    //             props.history.push('/Dashboard');
+    //         })
+    //         .catch(err => console.log(err));
+    // }
+
+    // const submitLogin = e => {
+    //     e.preventDefault();
+    //     axios
+    //       .post("http://localhost:5000/api/login", credentials)
+    //       .then(res => {
+    //         // console.log(res);
+    //         localStorage.setItem("token", res.data.payload);
+    //         props.history.push('/protected');
+    //       })
+    //       .catch(err => console.log(err))
+    //   }
 
     const changeHandler = elem => {
         setLogin({ ...login, [elem.target.name]: elem.target.value});
