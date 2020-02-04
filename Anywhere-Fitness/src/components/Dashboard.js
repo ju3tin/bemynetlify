@@ -10,11 +10,11 @@ border: 1px solid black;
 width: 100%;
 display: flex;
 padding: 0% 0% 0% 0;
-margin: 0% 0 0% 0;
+margin: 3% 0% 3% 0%;
 border-radius: 5px;
 @media (max-width: 600px){
     flex-direction: column;
-    margin: 5% 0 5% 0;
+    margin: 3% 0 3% 0;
 }
 `
 const StyledTitle = styled.h1`
