@@ -50,6 +50,9 @@
   border-radius: 5px;
 }
 @media (max-width: 500px) {
+  .starterPs {
+    margin: 1% 0 0% 0;
+  }
   .flexHeader {
     flex-direction: column;
   }
@@ -63,7 +66,7 @@
   }
   .submitButton2 {
     position: relative;
-    bottom: 9rem;
+    bottom: 1.5rem;
     max-width: 50%;
     display: flex;
     justify-content: center;
@@ -82,7 +85,7 @@
   }
   .submitButton {
     position: relative;
-    bottom: 1rem;
+    bottom: 1.5rem;
     max-width: 50%;
     display: flex;
     justify-content: center;
@@ -91,6 +94,10 @@
   hr {
     width: 100%;
     margin: 5% 0 10% 0;
+  }
+  form {
+    border: 2px solid black;
+    border-radius: 5px;
   }
 }
 button {
@@ -138,15 +145,17 @@ form {
 .submitButton2:hover {
   font-weight: bold;
   cursor: pointer;
+  background-color: orange;
 }
 .submitButton:hover {
   font-weight: bold;
   cursor: pointer;
+  background-color: orange;
 }
 .flexThis {
   display: flex;
   justify-content: space-between;
-  margin: 0% 40% 2% 5%;
+  margin: 0% 5% 2% 5%;
 }
 a {
   text-decoration: none;
@@ -176,13 +185,16 @@ a:hover {
   margin: 3% 0 3% 0;
 }
 .unflexThis {
-  margin: 0% 0 0% 20%;
-  border: 3px solid gray;
+  margin: 0% 0 0% 10%;
+  border: 1.5px solid black;
   border-radius: 5px;
 }
 @media (max-width: 600px){
   .unflexThis{
     margin: 0;
+  }
+  .links{
+    color: orange;
   }
   .flexThis{
     flex-direction: column;
@@ -191,6 +203,19 @@ a:hover {
   }
   .links:hover{
     background-color: orange;
+  }
+  .linksfix1 {
+    position: absolute;
+    display: flex;
+    margin: 12% 1% 1% 5%;
+    color: black;
+  }
+  .linksfix2 {
+    position: relative;
+    display: flex;
+    max-width: 100%;
+    margin: 7% 1% 1% 71%;
+    color: black;
   }
 }
 .starterPs {
@@ -205,4 +230,17 @@ label {
 }
 hr {
   width: 100%;
+}
+.links{
+  color: black;
+  font-family: 'Roboto', sans-serif;
+}
+.rsvp {
+  border-radius: 5px;
+  opacity: .5;
+  color: #4B3DF1;
+  margin: 10% 0 5% 0;
+}
+.rsvp:hover {
+  background-color: #F48E44;
 }

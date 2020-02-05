@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 const StyledH1 = styled.h1`
   @media (max-width: 500px){
-    margin: 0% 0 0 0%;
+    margin: 5% 0 1% 0%;
   }
 `
 

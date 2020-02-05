@@ -9,6 +9,7 @@ import AttendeeActivities from "./AttendeeActivities"
 import Dashboard from "./Dashboard"
 import Profile from "./Profile";
 import PrivateRoute from "./PrivateRoute"
+import Logo from "./Logo"
 
 const StyledHr = styled.hr`
   margin: 2% 25% 2% 0%;
@@ -20,12 +21,14 @@ const Navigation = props => {
     <Router>
       <div>
         <nav className="flexThis">
-          <Link className="links" to="/profile/">Profile</Link>
-
-          <Link className="links" to={"/Dashboard"}>
+        <Link className="links, linksfix1" to={"/Dashboard"}>
             {" "}
             Home{" "}
           </Link>
+          <Logo />
+          <Link className="links, linksfix2" to="/profile/">Profile</Link>
+
+          
           {props.user.role === "attendee" && (
             <Link className="links" to="/attendees">
               {" "}
