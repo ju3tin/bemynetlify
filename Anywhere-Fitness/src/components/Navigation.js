@@ -1,33 +1,38 @@
 import React, { useEffect, useState } from "react"
+import { connect } from "react-redux";
 import styled from "styled-components"
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom"
+
+// components
 import InstructorActivities from "./InstructorActivities"
 import AttendeeActivities from "./AttendeeActivities"
 import Dashboard from "./Dashboard"
-import { useSelector } from "react-redux"
+import Profile from "./Profile";
 import PrivateRoute from "./PrivateRoute"
 
 const StyledHr = styled.hr`
   margin: 2% 25% 2% 0%;
 `
 
-const Navigation = () => {
+const Navigation = props => {
   const user = JSON.parse(localStorage.getItem("user"))
   return (
     <Router>
       <div>
         <nav className="flexThis">
+          <Link className="links" to="/profile/">Profile</Link>
+
           <Link className="links" to={"/Dashboard"}>
             {" "}
             Home{" "}
           </Link>
-          {user.role === "attendee" && (
+          {props.user.role === "attendee" && (
             <Link className="links" to="/attendees">
               {" "}
               Attendees{" "}
             </Link>
           )}
-          {user.role === "instructor" && (
+          {props.user.role === "instructor" && (
             <Link className="links" to="/instructors">
               {" "}
               Instructors{" "}
@@ -37,6 +42,8 @@ const Navigation = () => {
         </nav>
         <Switch>
           <Route exact path="/" component={Dashboard} />
+
+          <Route path="/profile" component={Profile} />
           <PrivateRoute path="/attendees" component={AttendeeActivities} />
           <PrivateRoute path="/instructors" component={InstructorActivities} />
         </Switch>
@@ -47,5 +54,10 @@ const Navigation = () => {
     </Router>
   )
 }
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
 
-export default Navigation
+export default connect (mapStateToProps, {})(Navigation)

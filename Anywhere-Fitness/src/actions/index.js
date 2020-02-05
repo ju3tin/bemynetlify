@@ -1,3 +1,4 @@
+import axios from "axios";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 export const GET_CLASSES_START = 'GET_CLASSES_START';
@@ -16,14 +17,16 @@ export const getClasses = () => dispatch => {
         .catch(err => console.log(err))
 }
 
-export const login = id => dispatch => {
+export const loginAndGetUser = user => dispatch => {
     dispatch({ type: GET_USER_START })
-    axiosWithAuth()
-        .get(`https://anywhere-fitness-backend.herokuapp.com/api/users/${id}`)
-        .then(res => {
-            console.log(res);
-            dispatch({ type: GET_USER_SUCCESS, payload: res.data })
-        })
-        .catch(err => console.log(err))
+    axios.post('https://anywhere-fitness-backend.herokuapp.com/api/auth/login', user)
+    .then(res => {
+        console.log(res);
+        dispatch({ type: GET_USER_SUCCESS, payload: res.data.user })
+        localStorage.setItem("token", res.data.user.token);
+        localStorage.setItem("user", JSON.stringify(res.data.user))
+    })
+    .catch(err => console.log(err))
 }
+
 
