@@ -6,10 +6,10 @@ import { Col, Card, CardTitle, CardSubtitle } from 'reactstrap';
 import styled from 'styled-components'
 
 const StyledCard = styled.div`
-background-color: purple;
+background-color: orange;
 width: 100%;
+border: 2px solid black;
 display: flex;
-padding: 0% 0% 0% 0;
 margin: 3% 0% 3% 0%;
 border-radius: 5px;
 @media (max-width: 600px){
@@ -22,15 +22,21 @@ const StyledTitle = styled.h1`
 font-size: 3rem;
 width: 50%;
 margin: 0 0 0 5%;
-background-color: orange;
+padding: 0 2% 0 2%;
+background-image: url(./assets/bwpic1.jpg);
+background-position: center;
+background-repeat: no-repeat;
+height: 19rem;
+align-items: center;
+background-size: cover;
 border-radius: 5px;
 display: flex;
 justify-content: center;
-align-items: center;
+color: white;
+text-shadow: 1px 1px 2px black, 0 0 25px purple, 0 0 5px darkblue;
 @media (max-width: 600px){
-    width: 100%;
-    margin: 0%;
-    font-size: 2rem;
+    width: 96%;
+    margin: 0;
 }
 `
 const StyledSubtitle = styled.h3`
