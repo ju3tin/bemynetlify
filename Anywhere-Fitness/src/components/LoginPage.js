@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { connect } from "react-redux";
-
 import { loginAndGetUser } from "../actions";
+import styled from 'styled-components'
+
+const StyledH1 = styled.h1`
+  @media (max-width: 500px){
+    margin: 0% 0 0 0%;
+  }
+`
 
 const LoginPage = props => {
   const [login, setLogin] = useState({ username: "", password: "" })
@@ -24,7 +30,7 @@ const LoginPage = props => {
 
   return (
     <form className="App" onSubmit={handleSubmit(onSubmit)}>
-      <h1>Log In</h1>
+      <StyledH1>Log In</StyledH1>
       <hr></hr>
 
       <label htmlFor="username">Username:</label>
