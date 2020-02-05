@@ -203,3 +203,6 @@ label {
   margin: 5% 0 2% 0;
   display: flex;
 }
+hr {
+  width: 100%;
+}
