@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { connect } from "react-redux";
+import { connect } from "react-redux"
 import styled from "styled-components"
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom"
 
@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom"
 import InstructorActivities from "./InstructorActivities"
 import AttendeeActivities from "./AttendeeActivities"
 import Dashboard from "./Dashboard"
-import Profile from "./Profile";
+import Profile from "./Profile"
 import PrivateRoute from "./PrivateRoute"
 
 const StyledHr = styled.hr`
@@ -20,7 +20,9 @@ const Navigation = props => {
     <Router>
       <div>
         <nav className="flexThis">
-          <Link className="links" to="/profile/">Profile</Link>
+          <Link className="links" to="/profile/">
+            Profile
+          </Link>
 
           <Link className="links" to={"/Dashboard"}>
             {" "}
@@ -60,4 +62,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect (mapStateToProps, {})(Navigation)
+export default connect(mapStateToProps, {})(Navigation)
