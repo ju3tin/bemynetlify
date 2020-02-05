@@ -1,31 +1,51 @@
 import React, { useEffect, useState } from "react"
+import { connect } from "react-redux";
 import styled from "styled-components"
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom"
+
+// components
 import InstructorActivities from "./InstructorActivities"
 import AttendeeActivities from "./AttendeeActivities"
 import Dashboard from "./Dashboard"
 import Profile from "./Profile";
+import PrivateRoute from "./PrivateRoute"
 
 const StyledHr = styled.hr`
   margin: 2% 25% 2% 0%;
 `
 
-const Navigation = () => {
+const Navigation = props => {
+  const user = JSON.parse(localStorage.getItem("user"))
   return (
     <Router>
       <div>
         <nav className="flexThis">
-          <Link className="links" to={"/Dashboard"}> Home </Link>
           <Link className="links" to="/profile/">Profile</Link>
-          <Link className="links" to="/attendees"> Attendees </Link>
-          <Link className="links" to="/instructors"> Instructors </Link>
+
+          <Link className="links" to={"/Dashboard"}>
+            {" "}
+            Home{" "}
+          </Link>
+          {props.user.role === "attendee" && (
+            <Link className="links" to="/attendees">
+              {" "}
+              Attendees{" "}
+            </Link>
+          )}
+          {props.user.role === "instructor" && (
+            <Link className="links" to="/instructors">
+              {" "}
+              Instructors{" "}
+            </Link>
+          )}
           {/* <Link to={"/Logout"}> Logout </Link> */}
         </nav>
         <Switch>
           <Route exact path="/" component={Dashboard} />
-          <Route path="/attendees" component={AttendeeActivities} />
-          <Route path="/instructors" component={InstructorActivities} />
+
           <Route path="/profile" component={Profile} />
+          <PrivateRoute path="/attendees" component={AttendeeActivities} />
+          <PrivateRoute path="/instructors" component={InstructorActivities} />
         </Switch>
         <StyledHr />
       </div>
@@ -34,5 +54,10 @@ const Navigation = () => {
     </Router>
   )
 }
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
 
-export default Navigation
+export default connect (mapStateToProps, {})(Navigation)

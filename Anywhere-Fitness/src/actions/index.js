@@ -24,18 +24,9 @@ export const loginAndGetUser = user => dispatch => {
         console.log(res);
         dispatch({ type: GET_USER_SUCCESS, payload: res.data.user })
         localStorage.setItem("token", res.data.user.token);
+        localStorage.setItem("user", JSON.stringify(res.data.user))
     })
     .catch(err => console.log(err))
 }
 
-// export const getUser = id => dispatch => {
-//     dispatch({ type: GET_USER_START })
-//     axiosWithAuth()
-//         .get(`https://anywhere-fitness-backend.herokuapp.com/api/users/${id}`)
-//         .then(res => {
-//             console.log(res);
-//             dispatch({ type: GET_USER_SUCCESS, payload: res.data.user })
-//         })
-//         .catch(err => console.log(err))
-// }
 

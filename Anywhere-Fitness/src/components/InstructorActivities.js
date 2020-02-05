@@ -1,10 +1,14 @@
-import React, { useEfect } from "react"
+import React, { useEffect } from "react"
 import { Route } from "react-router-dom"
 import { axiosWithAuth } from "../utils/axiosWithAuth"
 import { connect } from "react-redux"
 import { getClasses } from "../actions/index"
 
 const InstructorActivities = props => {
+  useEffect(() => {
+    props.getClasses();
+  }, [])
+
   return (
     <div>
       <Route path="/Instructors">
