@@ -1,4 +1,5 @@
 import React, { useEffect,  useState } from "react"
+import { connect } from "react-redux";
 import Navigation from "./Navigation"
 import Axios from "axios";
 import { Col, Card, CardTitle, CardSubtitle } from 'reactstrap';
@@ -46,16 +47,7 @@ const [classData, setClassData] = useState([])
 const [userData, setUserData] = useState([{}])
 
 
-// AXIOS requests below-- User + Class data (Setting state for cards)
-useEffect(()=>{
-    Axios
-    .get('https://anywhere-fitness-backend.herokuapp.com/api/users')
-    .then(resp => {
-        setUserData(resp.data)
-        console.log("This is the User data: ", resp.data)
-        console.log("user test", userData)
-    })
-},[])
+
 useEffect(()=>{
     Axios
     .get('https://anywhere-fitness-backend.herokuapp.com/api/classes')
@@ -69,6 +61,7 @@ useEffect(()=>{
 return (
     <div className="container">
     <Navigation />
+    <h3>{props.user.message}</h3>
     {classData.map(c => (
         <>
         <Col sm="6">
@@ -90,6 +83,11 @@ return (
 )
 }
 
+const mapStateToProps = state => {
+    return {
+        user: state.user
+    }
+}
 
-export default Dashboard
+export default connect (mapStateToProps, {})(Dashboard)
 

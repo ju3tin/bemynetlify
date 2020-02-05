@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import axios from "axios";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
+import { connect } from "react-redux";
+
+import { loginAndGetUser } from "../actions";
 
 const LoginPage = props => {
 
@@ -9,19 +10,28 @@ const LoginPage = props => {
 
     const { register, handleSubmit, errors } = useForm();
 
-    const onSubmit= (data, e) => {
+    // const onSubmit= (data, e) => {
+    //     console.log(data);
+    //     // e.preventDefault();
+    //     axios
+    //         .post('https://anywhere-fitness-backend.herokuapp.com/api/auth/login', data)
+    //         .then (res => {
+    //             console.log(res);
+    //             set
+    //             localStorage.setItem("token", res.data.payload);
+    //             props.history.push('/Dashboard');
+    //         })
+    //         .catch(err => console.log(err));
+    //     e.target.reset();
+    // };
+
+    const onSubmit = (data, e) => {
         console.log(data);
-        // e.preventDefault();
-        axios
-            .post('https://anywhere-fitness-backend.herokuapp.com/api/auth/login', data)
-            .then (res => {
-                console.log('hello from the then');
-                localStorage.setItem("token", res.data.payload);
-                props.history.push('/Dashboard');
-            })
-            .catch(err => console.log(err));
+        e.preventDefault();
+        props.loginAndGetUser(data);
         e.target.reset();
-    };
+        props.history.push('/Dashboard');
+    }
 
     const changeHandler = elem => {
         setLogin({ ...login, [elem.target.name]: elem.target.value});
@@ -67,4 +77,6 @@ const LoginPage = props => {
     )
 }
 
-export default LoginPage;
+
+
+export default connect (null, { loginAndGetUser })(LoginPage);
