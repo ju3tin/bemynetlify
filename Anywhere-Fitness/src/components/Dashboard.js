@@ -7,7 +7,6 @@ import styled from 'styled-components'
 
 const StyledCard = styled.div`
 background-color: purple;
-border: 1px solid black;
 width: 100%;
 display: flex;
 padding: 0% 0% 0% 0;
@@ -18,6 +17,7 @@ border-radius: 5px;
     margin: 3% 0 3% 0;
 }
 `
+
 const StyledTitle = styled.h1`
 font-size: 3rem;
 width: 50%;
@@ -44,7 +44,6 @@ const Dashboard = props => {
 
 //Setting state for Users + Classes below--
 const [classData, setClassData] = useState([])
-const [userData, setUserData] = useState([{}])
 
 
 

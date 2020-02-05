@@ -41,18 +41,57 @@
   display: flex;
   justify-content: space-evenly;
   border: 3px solid gray;
-  background-color: blue;
+  /* background: rgb(245,127,23);
+  background: linear-gradient(0deg, rgba(245,127,23,1) 0%, rgba(255,253,231,1) 100%); */
+  background: rgb(26,35,126);
+  background: linear-gradient(0deg, rgba(26,35,126,1) 0%, rgba(232,234,246,1) 100%);
   padding: 2% 0 2% 0;
-  margin: 0% 5% 0 5%;
+  margin: 0% 2% 0% 2%;
+  border-radius: 5px;
 }
 @media (max-width: 500px) {
   .flexHeader {
     flex-direction: column;
   }
-}
-hr {
-  width: 100%;
-  margin: 5% 0 10% 0;
+  label {
+    display: flex;
+    justify-content: Center;
+  }
+  input {
+    width: 50%;
+    margin: 0 0 0 25%;
+  }
+  .submitButton2 {
+    position: relative;
+    bottom: 9rem;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    left: 25%;
+  }
+  select {
+    width: 50%;
+    position: relative;
+    left: 25%;
+  }
+  .roleSelector {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  .submitButton {
+    position: relative;
+    bottom: 1rem;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    left: 25%;
+  }
+  hr {
+    width: 100%;
+    margin: 5% 0 10% 0;
+  }
 }
 button {
   margin: 5% 0 0 0;
@@ -69,7 +108,7 @@ form {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 5% 0 0% 0;
+  margin: 2% 0 2% 0;
 }
 .sectionBorder {
   border: 1px solid black;
@@ -89,7 +128,7 @@ form {
   border-radius: 1rem;
 }
 .submitButton2 {
-  margin: 10rem 0 0 0;
+  margin: 10.7rem 0 0 0;
   padding: 2% 1% 2% 1%;
   width: 100%;
   background-color: blue;
@@ -153,4 +192,14 @@ a:hover {
   .links:hover{
     background-color: orange;
   }
+}
+.starterPs {
+  color: red;
+  font-weight: bold;
+  position: relative;
+  bottom: 2.5%;
+}
+label {
+  margin: 5% 0 2% 0;
+  display: flex;
 }
