@@ -14,7 +14,7 @@ function App() {
           <div className="flexHeader">
             <Route exact path="/" component={LoginPage} />
             <Route exact path="/" component={RegisterPage} />
-            <PrivateRoute path="/Dashboard" component={Dashboard} />
+            <Route path="/Dashboard" component={Dashboard} />
           </div>
         </Switch>
       </div>

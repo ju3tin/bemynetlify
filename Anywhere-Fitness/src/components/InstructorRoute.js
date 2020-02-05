@@ -8,8 +8,14 @@ const InstructorRoute = ({ component: Component, ...rest }) => {
       {...rest}
       render={() => {
         if (props.role === "instructor") {
+          {
+            console.log("role")
+          }
           return <Component />
         } else {
+          {
+            console.log("login")
+          }
           return <Redirect to="/login" />
         }
       }}
