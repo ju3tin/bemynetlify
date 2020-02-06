@@ -44,62 +44,12 @@
   /* background: rgb(245,127,23);
   background: linear-gradient(0deg, rgba(245,127,23,1) 0%, rgba(255,253,231,1) 100%); */
   background: rgb(26,35,126);
-  background: linear-gradient(0deg, rgba(26,35,126,1) 0%, rgba(232,234,246,1) 100%);
+  background: linear-gradient(0deg, #FF5500 0%, rgb(230, 234, 255) 100%);
   padding: 2% 0 2% 0;
   margin: 0% 2% 0% 2%;
   border-radius: 5px;
 }
-@media (max-width: 500px) {
-  .starterPs {
-    margin: 1% 0 0% 0;
-  }
-  .flexHeader {
-    flex-direction: column;
-  }
-  label {
-    display: flex;
-    justify-content: Center;
-  }
-  input {
-    width: 50%;
-    margin: 0 0 0 25%;
-  }
-  .submitButton2 {
-    position: relative;
-    bottom: 1.5rem;
-    max-width: 50%;
-    display: flex;
-    justify-content: center;
-    left: 25%;
-  }
-  select {
-    width: 50%;
-    position: relative;
-    left: 25%;
-  }
-  .roleSelector {
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 1.5rem;
-  }
-  .submitButton {
-    position: relative;
-    bottom: 1.5rem;
-    max-width: 50%;
-    display: flex;
-    justify-content: center;
-    left: 25%;
-  }
-  hr {
-    width: 100%;
-    margin: 5% 0 10% 0;
-  }
-  form {
-    border: 2px solid black;
-    border-radius: 5px;
-  }
-}
+
 button {
   margin: 5% 0 0 0;
   width: 80%;
@@ -181,12 +131,12 @@ a:hover {
   display: flex;
 }
 .paraClass {
-  color: white;
+  color: #000000;
   margin: 3% 0 3% 0;
 }
 .unflexThis {
-  margin: 0% 0 0% 10%;
-  border: 1.5px solid black;
+  margin: 0% 0% 0% 0%;
+  border: 3px solid #FF5500;
   border-radius: 5px;
 }
 @media (max-width: 600px){
@@ -208,14 +158,90 @@ a:hover {
     position: absolute;
     display: flex;
     margin: 12% 1% 1% 5%;
-    color: black;
+    color: white;
   }
   .linksfix2 {
     position: relative;
     display: flex;
     max-width: 100%;
-    margin: 7% 1% 1% 71%;
-    color: black;
+    margin: 7% 1% 1% 81%;
+    color: white;
+  }
+}
+@media (max-width: 500px) {
+  .starterPs {
+    margin: 1% 0 0% 0;
+  }
+  .flexHeader {
+    flex-direction: column;
+  }
+  label {
+    display: flex;
+    justify-content: Center;
+  }
+  input {
+    width: 50%;
+    margin: 0 0 0 25%;
+  }
+  .submitButton2 {
+    position: relative;
+    bottom: 1.5rem;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    left: 25%;
+  }
+  select {
+    width: 50%;
+    position: relative;
+    left: 25%;
+  }
+  .roleSelector {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  .submitButton {
+    position: relative;
+    bottom: 1.5rem;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    left: 25%;
+  }
+  hr {
+    width: 100%;
+    margin: 5% 0 10% 0;
+  }
+  form {
+    border: 2px solid black;
+    border-radius: 5px;
+  }
+  .linksfix2 {
+    position: relative;
+    display: flex;
+    max-width: 100%;
+    margin: 7% 1% 1% 81%;
+    color: white;
+  }
+}
+@media (max-width: 450px){
+  .linksfix2 {
+    position: relative;
+    display: flex;
+    max-width: 100%;
+    margin: 7% 1% 1% 76%;
+    color: white;
+  }
+}
+@media (max-width: 350px){
+  .linksfix2 {
+    position: relative;
+    display: flex;
+    max-width: 100%;
+    margin: 7% 1% 1% 66%;
+    color: white;
   }
 }
 .starterPs {
@@ -237,10 +263,22 @@ hr {
 }
 .rsvp {
   border-radius: 5px;
-  opacity: .5;
+  opacity: .50;
   color: #4B3DF1;
   margin: 10% 0 5% 0;
+  width: 65%;
+  border: 2px solid black;
 }
 .rsvp:hover {
-  background-color: #F48E44;
+  background-color: #FF5500;
+  color: white;
+  opacity: 1;
+}
+@media (min-width: 600px){
+  .linksfix1{
+    margin: 4% 0 0 0;
+  }
+  .linksfix2{
+    margin: 4% 0 0 0;
+  }
 }

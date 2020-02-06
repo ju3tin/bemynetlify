@@ -6,9 +6,13 @@ import { Col, Card, CardTitle, CardSubtitle } from 'reactstrap';
 import styled from 'styled-components'
 
 const StyledCard = styled.div`
-background-color: #4B3DF1;
-width: 100%;
-border: 2px solid black;
+background-color: 
+white
+//#E6EAFF
+//#4B3DF1
+;
+width: 99%;
+border: 4px solid #FF5500;
 display: flex;
 margin: 3% 0% 3% 0%;
 border-radius: 5px;
@@ -17,17 +21,22 @@ font-family: 'Roboto', sans-serif;
     flex-direction: column;
     margin: 3% 0 3% 0;
 }
+@media (min-width: 900px){
+    width: 99.5%
+}
+@media (max-width: 550px){
+    width: 98%;
+}
 `
 
 const StyledTitle = styled.h1`
 font-size: 3rem;
-width: 70%;
-margin: 1% 0 1% 5%;
+width: 100%;
+margin: 0% 0 0% 0%;
 padding: 0 2% 0 2%;
 background-image: url(./assets/bwpic1.jpg);
 background-position: center;
 background-repeat: no-repeat;
-border: 3px solid black;
 height: 20rem;
 align-items: center;
 background-size: cover;
@@ -35,9 +44,8 @@ border-radius: 5px;
 display: flex;
 justify-content: center;
 color: white;
-text-shadow: 1px 1px 2px black,0px 0px 15px #4B3DF1, 0 0 5px darkblue;
 @media (max-width: 600px){
-    width: auto;
+    width: 96%;
     margin: 0;
 }
 `
@@ -47,7 +55,7 @@ width: 80%;
 font-weight: bold;
 font-size: 1.5rem;
 padding: 2% 0 5% 0;
-color: white;
+color: black;
 margin: 20% 0 0 10%;
 `
 

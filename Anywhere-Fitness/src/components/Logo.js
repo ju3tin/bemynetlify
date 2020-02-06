@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const StyledImg = styled.img`
 width: 50%;
 @media (max-width: 600px){
-    margin: 0 0 5% 0;
+    margin: 0 0 0% 0;
     width: 50%;
 }
 `
