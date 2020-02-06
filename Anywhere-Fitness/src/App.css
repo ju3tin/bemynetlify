@@ -68,6 +68,7 @@ button:hover {
 form {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   margin: 5% 0 0% 0;
 }
@@ -141,16 +142,20 @@ a:hover {
   border: 3px solid gray;
   border-radius: 5px;
 }
-@media (max-width: 600px){
-  .unflexThis{
+@media (max-width: 600px) {
+  .unflexThis {
     margin: 0;
   }
-  .flexThis{
+  .flexThis {
     flex-direction: column;
     justify-content: center;
     margin: 0;
   }
-  .links:hover{
+  .links:hover {
     background-color: orange;
   }
+}
+
+.add-form {
+  align-items: center;
 }

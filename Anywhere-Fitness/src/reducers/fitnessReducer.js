@@ -9,7 +9,9 @@ import {
   UPDATE_CLASSES_START,
   UPDATE_CLASSES_SUCCESS,
   DELETE_CLASSES_START,
-  DELETE_CLASSES_SUCCESS
+  DELETE_CLASSES_SUCCESS,
+  NAV_START,
+  NAV_COMPLETE
 } from "../actions"
 
 const initialState = {
@@ -97,6 +99,16 @@ export const fitnessReducer = (state = initialState, action) => {
           ...state.class,
           [action.name]: action.value
         }
+      }
+    case NAV_START:
+      return {
+        ...state,
+        isLoading: true
+      }
+    case NAV_COMPLETE:
+      return {
+        ...state,
+        isLoading: false
       }
     default:
       return state

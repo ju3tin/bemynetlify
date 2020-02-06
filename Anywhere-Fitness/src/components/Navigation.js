@@ -4,7 +4,12 @@ import styled from "styled-components"
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom"
 
 // components
-import { localStorageUser } from "../actions/index"
+import {
+  localStorageUser,
+  DELETE_CLASSES_SUCCESS,
+  NAV_COMPLETE,
+  NAV_START
+} from "../actions/index"
 import InstructorActivities from "./InstructorActivities"
 import AttendeeActivities from "./AttendeeActivities"
 import Dashboard from "./Dashboard"
@@ -26,10 +31,11 @@ const Navigation = props => {
   return (
     <div>
       <nav className="flexThis">
-        <Link className="links" to="/profile/">
-          Profile
-        </Link>
-
+        {localStorage.getItem("token") && (
+          <Link className="links" to="/profile/">
+            Profile
+          </Link>
+        )}
         <Link className="links" to={"/Dashboard"}>
           {" "}
           Home{" "}
@@ -46,7 +52,18 @@ const Navigation = props => {
             Instructors{" "}
           </Link>
         )}
-        {/* <Link to={"/Logout"}> Logout </Link> */}
+
+        <button
+          onClick={() => {
+            localStorage.clear("token")
+            localStorage.clear("user")
+            window.location.reload()
+          }}
+        >
+          Log Out
+        </button>
+
+        <Link to="/">Log In</Link>
       </nav>
 
       <StyledHr />

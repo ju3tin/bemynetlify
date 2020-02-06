@@ -58,7 +58,6 @@ const Dashboard = props => {
 
   return (
     <div className="container">
-      <Navigation />
       <h3>{props.user.message}</h3>
       {classData.map(c => (
         <>
