@@ -28,7 +28,7 @@ font-family: 'Roboto', sans-serif;
     width: 99.75%
 }
 @media (max-width: 550px){
-    width: 98%;
+    width: 99%;
 }
 `
 
