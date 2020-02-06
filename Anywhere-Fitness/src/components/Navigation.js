@@ -4,7 +4,12 @@ import styled from "styled-components"
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom"
 
 // components
-import { localStorageUser } from "../actions/index"
+import {
+  localStorageUser,
+  DELETE_CLASSES_SUCCESS,
+  NAV_COMPLETE,
+  NAV_START
+} from "../actions/index"
 import InstructorActivities from "./InstructorActivities"
 import AttendeeActivities from "./AttendeeActivities"
 import Dashboard from "./Dashboard"
@@ -17,7 +22,7 @@ const StyledHr = styled.hr`
 `
 
 const Navigation = props => {
-  // const user = JSON.parse(localStorage.getItem("user"))
+
   const dispatch = useDispatch()
   const user = useSelector(state => state.user)
 
@@ -25,70 +30,49 @@ const Navigation = props => {
     dispatch(localStorageUser())
   }, [])
   return (
-// <<<<<<< HEAD
-//     <Router>
-//       <div>
-//         <nav className="flexThis">
-//         <Link className="links, linksfix1" to={"/Dashboard"}>
-// =======
     <div>
       <nav className="flexThis">
-        <Link className="links, linksfix2" to="/profile/">
+    <Logo />
+        {/* {localStorage.getItem("token") && ( */}
+        <Link className="links" to="/profile/">
           Profile
         </Link>
-
-        <Link className="linksfix1" to={"/Dashboard"}>
+        {/* )} */}
+        <Link className="links" to={"/Dashboard"}>
           {" "}
           Home{" "}
         </Link>
         {user.role === "attendee" && (
           <Link className="links" to="/attendees">
-{/* >>>>>>> 1924934f6541fa41f361e8c6d45f010df4a8d09f */}
             {" "}
             Attendees{" "}
           </Link>
-// <<<<<<< HEAD
-//           <Logo />
-//           <Link className="links, linksfix2" to="/profile/">Profile</Link>
-
-          
-//           {props.user.role === "attendee" && (
-//             <Link className="links" to="/attendees">
-//               {" "}
-//               Attendees{" "}
-//             </Link>
-//           )}
-//           {props.user.role === "instructor" && (
-//             <Link className="links" to="/instructors">
-//               {" "}
-//               Instructors{" "}
-//             </Link>
-//           )}
-//           {/* <Link to={"/Logout"}> Logout </Link> */}
-//         </nav>
-//         <Switch>
-//           <Route exact path="/" component={Dashboard} />
-
-//           <Route path="/profile" component={Profile} />
-//           <PrivateRoute path="/attendees" component={AttendeeActivities} />
-//           <PrivateRoute path="/instructors" component={InstructorActivities} />
-//         </Switch>
-//         <StyledHr />
-//       </div>
-// =======
         )}
         {user.role === "instructor" && (
           <Link className="links" to="/instructors">
+
             {" "}
             Instructors{" "}
           </Link>
+
         )}
-        {/* <Link to={"/Logout"}> Logout </Link> */}
+
+        <button
+          onClick={() => {
+            localStorage.clear("token")
+            localStorage.clear("user")
+            window.location.reload()
+          }}
+        >
+          Log Out
+        </button>
+
+        <Link to="/">Log In</Link>
       </nav>
-{/* >>>>>>> 1924934f6541fa41f361e8c6d45f010df4a8d09f */}
 
       <StyledHr />
     </div>
+
   )
 }
 

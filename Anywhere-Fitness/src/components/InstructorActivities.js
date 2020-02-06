@@ -36,7 +36,7 @@ const InstructorActivities = props => {
       <Route path="/Instructors">
         <h1>Instructor Activities</h1>
 
-        <form className="add_form" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <label>
             Class Name:
             <input

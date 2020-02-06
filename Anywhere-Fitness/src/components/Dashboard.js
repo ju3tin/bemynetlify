@@ -7,6 +7,7 @@ import styled from "styled-components"
 import { localStorageUser } from "../actions"
 
 const StyledCard = styled.div`
+
 background-color: 
 white
 //#E6EAFF
@@ -34,6 +35,7 @@ font-family: 'Roboto', sans-serif;
 `
 
 const StyledTitle = styled.h1`
+
 font-size: 3rem;
 width: 100%;
 margin: 0% 0 0% 0%;
@@ -67,7 +69,7 @@ text-shadow: -1px -1px 0 #FF5500, 1px -1px 0 #FF5500, -1px 1px 0 #FF5500, 1px 1p
 }
 @media (max-width: 335px){
     font-size: 2rem;
-  }
+}
 `
 const StyledSubtitle = styled.h3`
 border-bottom: 1px solid black;
@@ -87,7 +89,7 @@ const Dashboard = props => {
   const [userData, setUserData] = useState([{}])
 
 //Setting state for Classes below--
-const [classData, setClassData] = useState([])
+
 const [titleUsername, setTitleUsername] = useState("")
 
 useEffect(()=>{
@@ -103,7 +105,8 @@ useEffect(()=>{
 
   return (
     <div className="container">
-    <Navigation />
+
+    
     {classData.map(c => (
         <>
         <Col sm="12">
@@ -121,6 +124,8 @@ useEffect(()=>{
                 </Col>
                     </>
 ))}
+        
+
     </div>
   )
 }
