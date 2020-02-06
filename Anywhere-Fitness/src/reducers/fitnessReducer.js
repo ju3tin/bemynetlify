@@ -6,8 +6,15 @@ import {
   EDIT_USER_START,
   EDIT_USER_SUCCESS,
   DELETE_USER_START,
-  DELETE_USER_SUCCESS
-} from "../actions";
+  DELETE_USER_SUCCESS,
+  FORM_CHANGE,
+  UPDATE_CLASSES_START,
+  UPDATE_CLASSES_SUCCESS,
+  DELETE_CLASSES_START,
+  DELETE_CLASSES_SUCCESS,
+  NAV_START,
+  NAV_COMPLETE
+} from "../actions"
 
 const initialState = {
   user: {
@@ -67,6 +74,16 @@ export const fitnessReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
+      }
+    case NAV_START:
+      return {
+        ...state,
+        isLoading: true
+      }
+    case NAV_COMPLETE:
+      return {
+        ...state,
+        isLoading: false
       }
     default:
       return state

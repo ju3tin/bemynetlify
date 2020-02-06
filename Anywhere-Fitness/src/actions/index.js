@@ -14,6 +14,8 @@ export const UPDATE_CLASSES_START = "UPDATE_CLASSES_START"
 export const UPDATE_CLASSES_SUCCESS = "UPDATE_CLASSES_SUCCESS"
 export const DELETE_CLASSES_START = "DELETE_CLASSES_START"
 export const DELETE_CLASSES_SUCCESS = "DELETE_CLASSES_SUCCESS"
+export const NAV_START = "NAV_START"
+export const NAV_COMPLETE = "NAV_COMPLETE"
 
 export const getClasses = () => dispatch => {
   dispatch({ type: GET_CLASSES_START })
