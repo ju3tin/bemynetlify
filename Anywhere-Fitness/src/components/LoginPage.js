@@ -1,7 +1,9 @@
+
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { connect } from "react-redux";
 import { loginAndGetUser } from "../actions";
+import RegisterPage from "../components/RegisterPage"
 import styled from 'styled-components'
 
 const StyledH1 = styled.h1`
@@ -14,18 +16,19 @@ text-shadow: -1px -1px 0 #FF5500, 1px -1px 0 #FF5500, -1px 1px 0 #FF5500, 1px 1p
   }
 `
 
+
 const LoginPage = props => {
   const [login, setLogin] = useState({ username: "", password: "" })
 
   const { register, handleSubmit, errors } = useForm()
 
-    const onSubmit = (data, e) => {
-        console.log(data);
-        e.preventDefault();
-        props.loginAndGetUser(data);
-        e.target.reset();
-        props.history.push('/Dashboard');
-    }
+  const onSubmit = (data, e) => {
+    console.log(data, "hello from data")
+    e.preventDefault()
+    props.loginAndGetUser(data)
+    props.history.push("/Dashboard")
+    e.target.reset()
+  }
 
   const changeHandler = elem => {
     setLogin({ ...login, [elem.target.name]: elem.target.value })
@@ -33,6 +36,7 @@ const LoginPage = props => {
   }
 
   return (
+
     <form className="App" onSubmit={handleSubmit(onSubmit)}>
       <StyledH1>Log In</StyledH1>
       <hr></hr>
@@ -71,11 +75,12 @@ const LoginPage = props => {
         </p>
       )}
 
-      <input type="submit" className="submitButton2" />
-    </form>
+
+        <input type="submit" className="submitButton2" />
+      </form>
+      <RegisterPage />
+    </>
   )
 }
 
-
-
-export default connect (null, { loginAndGetUser })(LoginPage);
+export default connect(null, { loginAndGetUser })(LoginPage)

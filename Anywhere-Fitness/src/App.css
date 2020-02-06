@@ -66,6 +66,7 @@ button:hover {
 form {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   margin: 2% 0 2% 0;
   color: rgb(229, 294, 255);
@@ -151,21 +152,24 @@ a:hover {
   /*#4B3DF1*/
   ;
 }
+
 @media (max-width: 600px){
   .unflexThis{
     height: auto;
   }
   .links{
     color: orange;
+
   }
-  .flexThis{
+  .flexThis {
     flex-direction: column;
     justify-content: center;
     margin: 0;
   }
-  .links:hover{
+  .links:hover {
     background-color: orange;
   }
+
   .linksfix1 {
     position: absolute;
     display: flex;
@@ -327,3 +331,4 @@ input {
 select { 
   background-color: rgb(229, 294, 255);
 }
+

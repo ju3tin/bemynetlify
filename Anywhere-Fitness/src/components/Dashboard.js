@@ -1,11 +1,13 @@
-import React, { useEffect,  useState } from "react"
-import { connect } from "react-redux";
+import React, { useEffect, useState } from "react"
+import { connect, useSelector, useDispatch } from "react-redux"
 import Navigation from "./Navigation"
-import Axios from "axios";
-import { Col, Card, CardTitle, CardSubtitle } from 'reactstrap';
-import styled from 'styled-components'
+import Axios from "axios"
+import { Col, Card, CardTitle, CardSubtitle } from "reactstrap"
+import styled from "styled-components"
+import { localStorageUser } from "../actions"
 
 const StyledCard = styled.div`
+
 background-color: 
 white
 //#E6EAFF
@@ -30,9 +32,11 @@ font-family: 'Roboto', sans-serif;
 @media (max-width: 550px){
     width: 99%;
 }
+
 `
 
 const StyledTitle = styled.h1`
+
 font-size: 3rem;
 width: 100%;
 margin: 0% 0 0% 0%;
@@ -54,6 +58,7 @@ text-shadow: -1px -1px 0 #FF5500, 1px -1px 0 #FF5500, -1px 1px 0 #FF5500, 1px 1p
 @media (min-width: 601px){
     justify-content: start;
     align-items: flex-end;
+
     width: 100%;
     padding: 0 0% 0% 1%;
 }
@@ -66,9 +71,10 @@ text-shadow: -1px -1px 0 #FF5500, 1px -1px 0 #FF5500, -1px 1px 0 #FF5500, 1px 1p
 }
 @media (max-width: 335px){
     font-size: 2rem;
-}
+  }
 `
 const StyledSubtitle = styled.h3`
+
 border-bottom: 1px solid black;
 width: 80%;
 font-weight: bold;
@@ -79,12 +85,17 @@ margin: 20% 0 0 10%;
 @media (max-width: 600px){
     margin: 5% 0 0 10%;
 }
+
 `
 
 const Dashboard = props => {
+  //Setting state for Users + Classes below--
+  const [classData, setClassData] = useState([])
+  const [userData, setUserData] = useState([{}])
+
 
 //Setting state for Classes below--
-const [classData, setClassData] = useState([])
+
 const [titleUsername, setTitleUsername] = useState("")
 
 useEffect(()=>{
@@ -95,12 +106,14 @@ useEffect(()=>{
         console.log("This is the Classes data: ", resp.data)
         setTitleUsername(props.user.username)
         console.log("this is my title username: ", titleUsername)
-    })
-},[])
 
-return (
+    })
+  }, [])
+
+  return (
     <div className="container">
-    <Navigation />
+
+    
     {classData.map(c => (
         <>
         <Col sm="12">
@@ -119,15 +132,15 @@ return (
                     </>
 ))}
         
+
     </div>
-)
+  )
 }
 
 const mapStateToProps = state => {
-    return {
-        user: state.user
-    }
+  return {
+    user: state.user
+  }
 }
 
-export default connect (mapStateToProps, {})(Dashboard)
-
+export default connect(mapStateToProps, {})(Dashboard)
