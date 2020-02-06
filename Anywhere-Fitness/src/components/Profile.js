@@ -6,12 +6,9 @@ import { editUser } from "../actions";
 const Profile = props => {
     const [editMode, setEditMode] = useState(false);
     const [user, setUser] = useState({
-        id: props.user.id,
-        message: props.user.message,
         username: props.user.username,
         email: props.user.email,
         role: props.user.role,
-        token: props.user.token
     })
 
     const handleChanges = e => {
@@ -24,6 +21,7 @@ const Profile = props => {
     const handleSubmit = e => {
         console.log(user);
         e.preventDefault();
+        console.log(props.user.id);
         props.editUser(props.user.id, user);
         setEditMode(false);
     }

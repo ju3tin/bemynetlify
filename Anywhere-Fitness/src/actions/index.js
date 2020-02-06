@@ -37,7 +37,8 @@ export const editUser = (id, values) => dispatch => {
   axiosWithAuth()
     .put(`/users/${id}`, values)
     .then(res => {
-      console.log(res)
+      console.log(res);
+      dispatch ({ type: EDIT_USER_SUCCESS })
     })
     .catch(err => console.log(err))
 }
