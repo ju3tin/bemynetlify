@@ -4,9 +4,10 @@ import styled from "styled-components"
 import { Link } from "react-router-dom"
 
 // components
-import {
-  localStorageUser,
-} from "../actions/index"
+
+import { localStorageUser } from "../actions/index"
+
+
 import Logo from "./Logo"
 
 const StyledHr = styled.hr`
