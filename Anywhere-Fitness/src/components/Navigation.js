@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import styled from "styled-components"
-import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 // components
 import {
   localStorageUser,
-  DELETE_CLASSES_SUCCESS,
-  NAV_COMPLETE,
-  NAV_START
 } from "../actions/index"
-import InstructorActivities from "./InstructorActivities"
-import AttendeeActivities from "./AttendeeActivities"
-import Dashboard from "./Dashboard"
-import Profile from "./Profile"
-import PrivateRoute from "./PrivateRoute"
 import Logo from "./Logo"
 
 const StyledHr = styled.hr`
@@ -53,8 +45,9 @@ const Navigation = props => {
             Instructors{" "}
           </Link>
         )}
-
-        <button
+        <Link to="/" className="login">Log In</Link>
+        <button 
+        className="logout"
           onClick={() => {
             localStorage.clear("token")
             localStorage.clear("user")
@@ -63,8 +56,6 @@ const Navigation = props => {
         >
           Log Out
         </button>
-
-        <Link to="/">Log In</Link>
       </nav>
 
       <StyledHr />
