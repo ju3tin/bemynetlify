@@ -31,11 +31,11 @@ const Navigation = props => {
   return (
     <div>
       <nav className="flexThis">
-        {localStorage.getItem("token") && (
-          <Link className="links" to="/profile/">
-            Profile
-          </Link>
-        )}
+        {/* {localStorage.getItem("token") && ( */}
+        <Link className="links" to="/profile/">
+          Profile
+        </Link>
+        {/* )} */}
         <Link className="links" to={"/Dashboard"}>
           {" "}
           Home{" "}
