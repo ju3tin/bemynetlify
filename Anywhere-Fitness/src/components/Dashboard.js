@@ -1,9 +1,10 @@
-import React, { useEffect,  useState } from "react"
-import { connect } from "react-redux";
+import React, { useEffect, useState } from "react"
+import { connect, useSelector, useDispatch } from "react-redux"
 import Navigation from "./Navigation"
-import Axios from "axios";
-import { Col, Card, CardTitle, CardSubtitle } from 'reactstrap';
-import styled from 'styled-components'
+import Axios from "axios"
+import { Col, Card, CardTitle, CardSubtitle } from "reactstrap"
+import styled from "styled-components"
+import { localStorageUser } from "../actions"
 
 const StyledCard = styled.div`
 background-color: 
@@ -66,7 +67,7 @@ text-shadow: -1px -1px 0 #FF5500, 1px -1px 0 #FF5500, -1px 1px 0 #FF5500, 1px 1p
 }
 @media (max-width: 335px){
     font-size: 2rem;
-}
+  }
 `
 const StyledSubtitle = styled.h3`
 border-bottom: 1px solid black;
@@ -82,6 +83,8 @@ margin: 20% 0 0 10%;
 `
 
 const Dashboard = props => {
+  //Setting state for Users + Classes below--
+  const [userData, setUserData] = useState([{}])
 
 //Setting state for Classes below--
 const [classData, setClassData] = useState([])
@@ -96,9 +99,9 @@ useEffect(()=>{
         setTitleUsername(props.user.username)
         console.log("this is my title username: ", titleUsername)
     })
-},[])
+  }, [])
 
-return (
+  return (
     <div className="container">
     <Navigation />
     {classData.map(c => (
@@ -118,16 +121,14 @@ return (
                 </Col>
                     </>
 ))}
-        
     </div>
-)
+  )
 }
 
 const mapStateToProps = state => {
-    return {
-        user: state.user
-    }
+  return {
+    user: state.user
+  }
 }
 
-export default connect (mapStateToProps, {})(Dashboard)
-
+export default connect(mapStateToProps, {})(Dashboard)

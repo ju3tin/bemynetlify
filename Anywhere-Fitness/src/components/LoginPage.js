@@ -19,13 +19,13 @@ const LoginPage = props => {
 
   const { register, handleSubmit, errors } = useForm()
 
-    const onSubmit = (data, e) => {
-        console.log(data);
-        e.preventDefault();
-        props.loginAndGetUser(data);
-        e.target.reset();
-        props.history.push('/Dashboard');
-    }
+  const onSubmit = (data, e) => {
+    console.log(data, "hello from data")
+    e.preventDefault()
+    props.loginAndGetUser(data)
+    props.history.push("/Dashboard")
+    e.target.reset()
+  }
 
   const changeHandler = elem => {
     setLogin({ ...login, [elem.target.name]: elem.target.value })
@@ -76,6 +76,4 @@ const LoginPage = props => {
   )
 }
 
-
-
-export default connect (null, { loginAndGetUser })(LoginPage);
+export default connect(null, { loginAndGetUser })(LoginPage)
