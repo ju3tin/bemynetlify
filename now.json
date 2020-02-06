@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "name": "anywhere-Fitness",
+  "name": "Anywhere-Fitness",
   "builds": [
     {
-      "src": "anywhere-Fitness/package.json",
+      "src": "Anywhere-Fitness/package.json",
       "use": "@now/static-build",
       "config": { "distDir": "build" }
     }
   ],
-  "routes": [{ "src": "/(.*)", "dest": "anywhere-Fitness/$1" }]
+  "routes": [{ "src": "/(.*)", "dest": "Anywhere-Fitness/$1" }]
 }
