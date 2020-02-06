@@ -22,7 +22,6 @@ const StyledHr = styled.hr`
 `
 
 const Navigation = props => {
-
   const dispatch = useDispatch()
   const user = useSelector(state => state.user)
 
@@ -32,7 +31,7 @@ const Navigation = props => {
   return (
     <div>
       <nav className="flexThis">
-    <Logo />
+        <Logo />
         {/* {localStorage.getItem("token") && ( */}
         <Link className="links" to="/profile/">
           Profile
@@ -50,11 +49,9 @@ const Navigation = props => {
         )}
         {user.role === "instructor" && (
           <Link className="links" to="/instructors">
-
             {" "}
             Instructors{" "}
           </Link>
-
         )}
 
         <button
@@ -72,7 +69,6 @@ const Navigation = props => {
 
       <StyledHr />
     </div>
-
   )
 }
 
