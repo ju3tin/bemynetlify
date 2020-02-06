@@ -12,7 +12,7 @@ white
 //#4B3DF1
 ;
 width: 99%;
-border: 4px solid #FF5500;
+border: 2px solid #FF5500;
 display: flex;
 margin: 3% 0% 3% 0%;
 border-radius: 5px;
@@ -80,10 +80,9 @@ margin: 20% 0 0 10%;
 
 const Dashboard = props => {
 
-//Setting state for Users + Classes below--
+//Setting state for Classes below--
 const [classData, setClassData] = useState([])
-
-
+const [titleUsername, setTitleUsername] = useState("")
 
 useEffect(()=>{
     Axios
@@ -91,14 +90,14 @@ useEffect(()=>{
     .then(resp => {
         setClassData(resp.data)
         console.log("This is the Classes data: ", resp.data)
-        console.log("classes test", classData)
+        setTitleUsername(props.user.username)
+        console.log("this is my title username: ", titleUsername)
     })
 },[])
 
 return (
     <div className="container">
     <Navigation />
-    <h3>{props.user.message}</h3>
     {classData.map(c => (
         <>
         <Col sm="12">
