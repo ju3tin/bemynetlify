@@ -32,7 +32,6 @@ font-family: 'Roboto', sans-serif;
 @media (max-width: 550px){
     width: 99%;
 }
-
 `
 
 const StyledTitle = styled.h1`
@@ -58,7 +57,6 @@ text-shadow: -1px -1px 0 #FF5500, 1px -1px 0 #FF5500, -1px 1px 0 #FF5500, 1px 1p
 @media (min-width: 601px){
     justify-content: start;
     align-items: flex-end;
-
     width: 100%;
     padding: 0 0% 0% 1%;
 }
@@ -71,10 +69,9 @@ text-shadow: -1px -1px 0 #FF5500, 1px -1px 0 #FF5500, -1px 1px 0 #FF5500, 1px 1p
 }
 @media (max-width: 335px){
     font-size: 2rem;
-  }
+}
 `
 const StyledSubtitle = styled.h3`
-
 border-bottom: 1px solid black;
 width: 80%;
 font-weight: bold;
@@ -85,14 +82,11 @@ margin: 20% 0 0 10%;
 @media (max-width: 600px){
     margin: 5% 0 0 10%;
 }
-
 `
 
 const Dashboard = props => {
   //Setting state for Users + Classes below--
-  const [classData, setClassData] = useState([])
   const [userData, setUserData] = useState([{}])
-
 
 //Setting state for Classes below--
 
@@ -106,7 +100,6 @@ useEffect(()=>{
         console.log("This is the Classes data: ", resp.data)
         setTitleUsername(props.user.username)
         console.log("this is my title username: ", titleUsername)
-
     })
   }, [])
 

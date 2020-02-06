@@ -23,7 +23,6 @@ const StyledHr = styled.hr`
 
 const Navigation = props => {
 
-  // const user = JSON.parse(localStorage.getItem("user"))
   const dispatch = useDispatch()
   const user = useSelector(state => state.user)
 
