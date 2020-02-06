@@ -5,6 +5,7 @@ import { loginAndGetUser } from "../actions";
 import styled from 'styled-components'
 
 const StyledH1 = styled.h1`
+color: rgb(229, 294, 255);
   @media (max-width: 500px){
     margin: 5% 0 0 0%;
   }

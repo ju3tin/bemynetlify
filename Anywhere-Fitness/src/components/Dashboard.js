@@ -44,9 +44,25 @@ border-radius: 5px;
 display: flex;
 justify-content: center;
 color: white;
+text-shadow: -1px -1px 0 #FF5500, 1px -1px 0 #FF5500, -1px 1px 0 #FF5500, 1px 1px 0 #FF5500;
+@media (min-width: 1200px){
+    height: 22rem;
+}
+@media (min-width: 601px){
+    justify-content: start;
+    align-items: flex-end;
+    width: 100%;
+    padding: 0 0% 0% 1%;
+}
+@media (max-width: 816px){
+    height: 21rem;
+}
 @media (max-width: 600px){
     width: 96%;
     margin: 0;
+}
+@media (max-width: 335px){
+    font-size: 2rem;
 }
 `
 const StyledSubtitle = styled.h3`
@@ -57,6 +73,9 @@ font-size: 1.5rem;
 padding: 2% 0 5% 0;
 color: black;
 margin: 20% 0 0 10%;
+@media (max-width: 600px){
+    margin: 5% 0 0 10%;
+}
 `
 
 const Dashboard = props => {
@@ -82,7 +101,7 @@ return (
     <h3>{props.user.message}</h3>
     {classData.map(c => (
         <>
-        <Col sm="6">
+        <Col sm="12">
                 <StyledCard>
                     <StyledTitle>{c.class_name}</StyledTitle>
                     <div className="unflexThis">

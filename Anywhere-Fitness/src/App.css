@@ -48,6 +48,7 @@
   padding: 2% 0 2% 0;
   margin: 0% 2% 0% 2%;
   border-radius: 5px;
+  height: 100%;
 }
 
 button {
@@ -66,6 +67,7 @@ form {
   justify-content: center;
   flex-direction: column;
   margin: 2% 0 2% 0;
+  color: rgb(229, 294, 255);
 }
 .sectionBorder {
   border: 1px solid black;
@@ -95,12 +97,12 @@ form {
 .submitButton2:hover {
   font-weight: bold;
   cursor: pointer;
-  background-color: orange;
+  background-color: #FF5500;
 }
 .submitButton:hover {
   font-weight: bold;
   cursor: pointer;
-  background-color: orange;
+  background-color: #FF5500;
 }
 .flexThis {
   display: flex;
@@ -121,6 +123,7 @@ a:hover {
 .selector {
   margin: 5% 0 0 0;
   width: 100%;
+  background-color: rgb(229, 294, 255);
 }
 .dropDownTitle {
   margin: 5% 0 0% 0;
@@ -138,10 +141,13 @@ a:hover {
   margin: 0% 0% 0% 0%;
   border: 3px solid #FF5500;
   border-radius: 5px;
+  background-color: rgb(229, 294, 255)
+  /*#4B3DF1*/
+  ;
 }
 @media (max-width: 600px){
   .unflexThis{
-    margin: 0;
+    height: auto;
   }
   .links{
     color: orange;
@@ -167,6 +173,12 @@ a:hover {
     margin: 7% 1% 1% 81%;
     color: white;
   }
+  .unflexThis {
+    border: none;
+  }
+  .flexHeader {
+    border: none;
+  }
 }
 @media (max-width: 500px) {
   .starterPs {
@@ -174,6 +186,7 @@ a:hover {
   }
   .flexHeader {
     flex-direction: column;
+    border: none;
   }
   label {
     display: flex;
@@ -253,6 +266,7 @@ a:hover {
 label {
   margin: 5% 0 2% 0;
   display: flex;
+  color: black;
 }
 hr {
   width: 100%;
@@ -281,4 +295,24 @@ hr {
   .linksfix2{
     margin: 4% 0 0 0;
   }
+}
+.linksfix1 {
+  color: white;
+  text-shadow: -1px -1px 0 #FF5500, 1px -1px 0 #FF5500, -1px 1px 0 #FF5500, 1px 1px 0 #FF5500;
+}
+.linksfix2 {
+  color: white;
+  text-shadow: -1px -1px 0 #FF5500, 1px -1px 0 #FF5500, -1px 1px 0 #FF5500, 1px 1px 0 #FF5500;
+}
+.linksfix1:hover{
+
+}
+.linksfix2:hover{
+
+}
+input {
+  background-color: rgb(229, 294, 255);
+}
+select { 
+  background-color: rgb(229, 294, 255);
 }

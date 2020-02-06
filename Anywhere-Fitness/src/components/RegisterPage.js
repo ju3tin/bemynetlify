@@ -4,9 +4,10 @@ import { axiosWithAuth } from "../utils/axiosWithAuth"
 import styled from 'styled-components'
 
 const StyledH1 = styled.h1`
-  @media (max-width: 500px){
-    margin: 5% 0 1% 0%;
-  }
+color: rgb(229, 294, 255);
+@media (max-width: 500px){
+  margin: 5% 0 1% 0%;
+}
 `
 
 const RegisterPage = props => {
