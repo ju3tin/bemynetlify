@@ -15,12 +15,14 @@ import AttendeeActivities from "./AttendeeActivities"
 import Dashboard from "./Dashboard"
 import Profile from "./Profile"
 import PrivateRoute from "./PrivateRoute"
+import Logo from "./Logo"
 
 const StyledHr = styled.hr`
   margin: 2% 25% 2% 0%;
 `
 
 const Navigation = props => {
+
   // const user = JSON.parse(localStorage.getItem("user"))
   const dispatch = useDispatch()
   const user = useSelector(state => state.user)
@@ -31,6 +33,7 @@ const Navigation = props => {
   return (
     <div>
       <nav className="flexThis">
+    <Logo />
         {/* {localStorage.getItem("token") && ( */}
         <Link className="links" to="/profile/">
           Profile
@@ -48,9 +51,11 @@ const Navigation = props => {
         )}
         {user.role === "instructor" && (
           <Link className="links" to="/instructors">
+
             {" "}
             Instructors{" "}
           </Link>
+
         )}
 
         <button
@@ -68,6 +73,7 @@ const Navigation = props => {
 
       <StyledHr />
     </div>
+
   )
 }
 
