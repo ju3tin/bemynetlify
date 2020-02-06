@@ -22,7 +22,10 @@ font-family: 'Roboto', sans-serif;
     margin: 3% 0 3% 0;
 }
 @media (min-width: 900px){
-    width: 99.5%
+    width: 99.75%
+}
+@media (min-width: 601px){
+    width: 99.75%
 }
 @media (max-width: 550px){
     width: 98%;
