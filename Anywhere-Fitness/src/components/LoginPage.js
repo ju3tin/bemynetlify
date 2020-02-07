@@ -1,8 +1,10 @@
 import React, { useState } from "react"
+import axios from "axios"
 import { useForm } from "react-hook-form"
-import { connect } from "react-redux"
-import { loginAndGetUser } from "../actions"
+import { connect, useDispatch } from "react-redux"
+import { GET_USER_START, GET_USER_SUCCESS } from "../actions"
 import RegisterPage from "../components/RegisterPage"
+
 import styled from "styled-components"
 
 const StyledH1 = styled.h1`
@@ -18,15 +20,30 @@ const StyledH1 = styled.h1`
 
 const LoginPage = props => {
   const [login, setLogin] = useState({ username: "", password: "" })
-
+  const dispatch = useDispatch()
   const { register, handleSubmit, errors } = useForm()
 
   const onSubmit = (data, e) => {
     console.log(data, "hello from data")
     e.preventDefault()
-    props.loginAndGetUser(data)
-    props.history.push("/Dashboard")
-    e.target.reset()
+    // dispatch(loginAndGetUser(data))
+    dispatch({ type: GET_USER_START })
+    axios
+      .post(
+        "https://anywhere-fitness-backend.herokuapp.com/api/auth/login",
+        data
+      )
+      .then(res => {
+        console.log(res, data, "on submit login page")
+        dispatch({ type: GET_USER_SUCCESS, payload: res.data.user })
+        localStorage.setItem("token", res.data.user.token)
+        localStorage.setItem("user", JSON.stringify(res.data.user))
+      })
+      .catch(err => console.log(err))
+      .finally(() => {
+        props.history.push("/Dashboard")
+        e.target.reset()
+      })
   }
 
   const changeHandler = elem => {
@@ -81,4 +98,4 @@ const LoginPage = props => {
   )
 }
 
-export default connect(null, { loginAndGetUser })(LoginPage)
+export default LoginPage

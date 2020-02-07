@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { useForm } from "react-hook-form"
-import { axiosWithAuth } from "../utils/axiosWithAuth"
+import axios from "axios"
 import styled from "styled-components"
 
 const StyledH1 = styled.h1`
@@ -36,8 +36,11 @@ const RegisterPage = props => {
     console.log(data)
     // e.preventDefault()
 
-    axiosWithAuth()
-      .post("/auth/register", data)
+    axios
+      .post(
+        "https://anywhere-fitness-backend.herokuapp.com/api/auth/register",
+        data
+      )
       .then(res => {
         console.log(res)
         localStorage.setItem("token", res.data.user.token)

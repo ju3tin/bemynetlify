@@ -1,7 +1,7 @@
-import { 
-  GET_CLASSES_START, 
-  GET_CLASSES_SUCCESS, 
-  GET_USER_START, 
+import {
+  GET_CLASSES_START,
+  GET_CLASSES_SUCCESS,
+  GET_USER_START,
   GET_USER_SUCCESS,
   EDIT_USER_START,
   EDIT_USER_SUCCESS,
@@ -27,7 +27,8 @@ const initialState = {
   isLoading: false,
   users: [],
   classes: [],
-  error: false
+  error: false,
+  class: []
 }
 
 export const fitnessReducer = (state = initialState, action) => {
@@ -73,7 +74,7 @@ export const fitnessReducer = (state = initialState, action) => {
     case DELETE_USER_SUCCESS:
       return {
         ...state,
-        isLoading: false,
+        isLoading: false
       }
     case NAV_START:
       return {

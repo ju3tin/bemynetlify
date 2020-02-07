@@ -22,7 +22,7 @@ const InstructorActivities = props => {
   const classes = useSelector(state => state.classes)
   const aClass = useSelector(state => state.class)
 
-  console.log(classes)
+  console.log(aClass)
 
   useEffect(() => {
     dispatch(getClasses())

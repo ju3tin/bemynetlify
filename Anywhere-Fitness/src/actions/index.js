@@ -7,8 +7,8 @@ export const GET_USER_START = "GET_USER_START"
 export const GET_USER_SUCCESS = "GET_USER_SUCCESS"
 export const EDIT_USER_START = "EDIT_USER_START"
 export const EDIT_USER_SUCCESS = "EDIT_USER_SUCCESS"
-export const DELETE_USER_START = 'DELETE_USER_START';
-export const DELETE_USER_SUCCESS = 'DELETE_USER_SUCCESS';
+export const DELETE_USER_START = "DELETE_USER_START"
+export const DELETE_USER_SUCCESS = "DELETE_USER_SUCCESS"
 export const FORM_CHANGE = "FORM_CHANGE"
 export const UPDATE_CLASSES_START = "UPDATE_CLASSES_START"
 export const UPDATE_CLASSES_SUCCESS = "UPDATE_CLASSES_SUCCESS"
@@ -39,38 +39,38 @@ export const localStorageUser = user => dispatch => {
   }
 }
 
-export const loginAndGetUser = user => dispatch => {
-  dispatch({ type: GET_USER_START })
-  axios
-    .post("https://anywhere-fitness-backend.herokuapp.com/api/auth/login", user)
-    .then(res => {
-      console.log(res)
-      dispatch({ type: GET_USER_SUCCESS, payload: res.data.user })
-      localStorage.setItem("token", res.data.user.token)
-      localStorage.setItem("user", JSON.stringify(res.data.user))
-    })
-    .catch(err => console.log(err))
-}
+// export const loginAndGetUser = user => dispatch => {
+//   dispatch({ type: GET_USER_START })
+//   axios
+//     .post("https://anywhere-fitness-backend.herokuapp.com/api/auth/login", user)
+//     .then(res => {
+//       console.log(res, "hello from loginandgetuser")
+//       dispatch({ type: GET_USER_SUCCESS, payload: res.data.user })
+//       localStorage.setItem("token", res.data.user.token)
+//       localStorage.setItem("user", JSON.stringify(res.data.user))
+//     })
+//     .catch(err => console.log(err))
+// }
 
 export const editUser = (id, values) => dispatch => {
   dispatch({ type: EDIT_USER_START })
   axiosWithAuth()
     .put(`/users/${id}`, values)
     .then(res => {
-      console.log(res);
-      dispatch ({ type: EDIT_USER_SUCCESS, payload: res.data })
+      console.log(res)
+      dispatch({ type: EDIT_USER_SUCCESS, payload: res.data })
     })
     .catch(err => console.log(err))
 }
 
 export const deleteUser = id => dispatch => {
-    dispatch({ type: DELETE_USER_START })
-    axiosWithAuth()
-        .delete(`/users/${id}`)
-        .then(res => {
-            console.log(res);
-        })
-        .catch(err => console.log(err))
+  dispatch({ type: DELETE_USER_START })
+  axiosWithAuth()
+    .delete(`/users/${id}`)
+    .then(res => {
+      console.log(res)
+    })
+    .catch(err => console.log(err))
 }
 
 export const addClass = aClass => dispatch => {
