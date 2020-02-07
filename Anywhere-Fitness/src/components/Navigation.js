@@ -4,7 +4,9 @@ import styled from "styled-components"
 import { Link } from "react-router-dom"
 
 // components
+
 import { localStorageUser } from "../actions/index"
+
 
 import Logo from "./Logo"
 
@@ -44,8 +46,9 @@ const Navigation = props => {
             Instructors{" "}
           </Link>
         )}
-
-        <button
+        <Link to="/" className="login">Log In</Link>
+        <button 
+        className="logout"
           onClick={() => {
             localStorage.clear("token")
             localStorage.clear("user")
@@ -54,8 +57,6 @@ const Navigation = props => {
         >
           Log Out
         </button>
-
-        <Link to="/">Log In</Link>
       </nav>
 
       <StyledHr />

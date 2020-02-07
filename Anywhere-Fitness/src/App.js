@@ -22,6 +22,7 @@ function App() {
         <div className="flexHeader">
           <Navigation refresh={refresh} setRefresh={setRefresh} />
         </div>
+        <div className="newflex">
         <Switch>
           <Route path="/dashboard" component={Dashboard} />
           <Route exact path="/" component={LoginPage} />
@@ -30,6 +31,7 @@ function App() {
           <PrivateRoute path="/attendees" component={AttendeeActivities} />
           <PrivateRoute path="/instructors" component={InstructorActivities} />
         </Switch>
+        </div>
       </div>
     </Router>
   )

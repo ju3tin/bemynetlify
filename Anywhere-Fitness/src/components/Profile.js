@@ -43,8 +43,8 @@ const Profile = props => {
             <h4>username: {props.user.username}</h4>
             <p>email: {props.user.email}</p>
             <p>role: {props.user.role}</p>
-            <button onClick={() => setEditMode(true)}>edit profile</button>
-            <button onClick={handleDelete}>delete account</button>
+            <button className="profbutton" onClick={() => setEditMode(true)}>edit profile</button>
+            <button className="profbutton" onClick={handleDelete}>delete account</button>
             </div>
 
             {editMode && <div>
