@@ -1,16 +1,25 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { useForm } from "react-hook-form"
 import { axiosWithAuth } from "../utils/axiosWithAuth"
-import styled from 'styled-components'
+import styled from "styled-components"
 
 const StyledH1 = styled.h1`
-color: white;
-text-shadow: -1px -1px 0 #FF5500, 1px -1px 0 #FF5500, -1px 1px 0 #FF5500, 1px 1px 0 #FF5500;
-//color: black;
-//color: rgb(229, 294, 255);
-@media (max-width: 500px){
-  margin: 5% 0 1% 0%;
-}
+  color: white;
+  text-shadow: -1px -1px 0 #ff5500, 1px -1px 0 #ff5500, -1px 1px 0 #ff5500,
+    1px 1px 0 #ff5500;
+  //color: black;
+  //color: rgb(229, 294, 255);
+  @media (max-width: 500px) {
+    margin: 5% 0 1% 0%;
+  }
+`
+const SelectInput = styled.select`
+  margin: 0 3%;
+  height: 40px;
+  width: 20%;
+  border: 2px solid lightgrey;
+  font-size: 1rem;
+  color: grey;
 `
 
 const RegisterPage = props => {
@@ -101,12 +110,16 @@ const RegisterPage = props => {
       )}
 
       <div className="roleSelector">Select Your Role:</div>
-      <select
+      <SelectInput
         className="dropDownTitle"
         name="role"
         ref={register({ required: true })}
       >
-        <option className="selector" value="placeholder" placeholder="Select a role...">
+        <option
+          className="selector"
+          value="placeholder"
+          placeholder="Select a role..."
+        >
           Select a role....
         </option>
         <option className="selector" value="attendee">
@@ -115,7 +128,7 @@ const RegisterPage = props => {
         <option className="selector" value="instructor">
           I'm an Instructor
         </option>
-      </select>
+      </SelectInput>
 
       <input type="submit" className="submitButton" />
     </form>
