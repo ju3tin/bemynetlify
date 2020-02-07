@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react"
-import { connect, useSelector, useDispatch } from "react-redux"
-import Navigation from "./Navigation"
+import { connect } from "react-redux"
+
 import Axios from "axios"
-import { Col, Card, CardTitle, CardSubtitle } from "reactstrap"
+import { Col } from "reactstrap"
 import styled from "styled-components"
-import { localStorageUser } from "../actions"
 
 const StyledCard = styled.div`
   background-color: white //#E6EAFF
