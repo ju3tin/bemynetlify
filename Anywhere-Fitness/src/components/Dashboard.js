@@ -6,27 +6,20 @@ import { Col } from "reactstrap"
 import styled from "styled-components"
 
 const StyledCard = styled.div`
-  background-color: white //#E6EAFF
-    //#4B3DF1;
-  width: 99%;
+  background-color: white; 
+   //#E6EAFF
+//#4B3DF1;
+  width: 65%;
   border: 2px solid #ff5500;
   display: flex;
-  margin: 3% 0% 3% 0%;
+  margin: 3% 0% 3% 17.5%;
   border-radius: 5px;
   font-family: "Roboto", sans-serif;
   @media (max-width: 600px) {
     flex-direction: column;
-    margin: 3% 0 3% 0;
-  }
-  @media (min-width: 900px) {
-    width: 99.75%;
-  }
-  @media (min-width: 601px) {
-    width: 99.75%;
-  }
-  @media (max-width: 550px) {
-    width: 99%;
-  }
+}
+
+}
 `
 
 const StyledTitle = styled.h1`
@@ -58,11 +51,14 @@ const StyledTitle = styled.h1`
   @media (max-width: 816px) {
     height: 21rem;
   }
+  @media (max-width: 670px){
+    height: 22rem;
+}
   @media (max-width: 600px) {
     width: 96%;
     margin: 0;
   }
-  @media (max-width: 335px) {
+  @media (max-width: 450px) {
     font-size: 2rem;
   }
 `
@@ -73,6 +69,7 @@ const StyledSubtitle = styled.h3`
   font-size: 1.5rem;
   padding: 2% 0 5% 0;
   color: black;
+  background-color: rgb(229, 294, 255);
   margin: 20% 0 0 10%;
   @media (max-width: 600px) {
     margin: 5% 0 0 10%;
